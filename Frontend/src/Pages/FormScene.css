@@ -1,0 +1,105 @@
+.scene {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+/* Background image */
+.bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+ 
+}
+
+/* slight dark overlay for contrast */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* Foreground sparkles */
+.foreground-sparkles {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 130%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.95;
+  animation: floatSlight 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatSlight {
+  from {
+    transform: translate(-50%, -50%) translateY(-6px);
+  }
+  to {
+    transform: translate(-50%, -50%) translateY(6px);
+  }
+}
+
+/* Card container */
+.card-wrap {
+  position: relative;
+  z-index: 3;
+  max-width: 420px;
+  width: 100%;
+  perspective: 1000px;
+}
+
+/* Glassmorphic floating card */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px) saturate(1.1);
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+.card-wrap:hover .card {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* Form styles */
+.lbl {
+  margin-bottom: 6px;
+  display: block;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  margin-bottom: 16px;
+  outline: none;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff6a00, #ff3d7a);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
