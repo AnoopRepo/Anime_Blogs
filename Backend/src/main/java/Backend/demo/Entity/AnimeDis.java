@@ -11,6 +11,7 @@ import java.util.Date;
 public class AnimeDis {
     @Id
     private String id;
+
     private String name;
     private Date date;
     private String num;

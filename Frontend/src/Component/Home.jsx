@@ -4,8 +4,8 @@ import Navbar from './Navbar'
 
 const Home = () => {
   return (
-    <div className=' bg-transparent space-y-10'>
-       
+    <div className='-z-1 bg-transparent space-y-10'>
+       <Navbar/>
       <div className='w-full h-full flex justify-center items-center '>
         <img src={car1} alt="" />
       </div> 

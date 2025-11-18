@@ -93,8 +93,7 @@ const Admin = ({className=""}) => {
   return (
     <div className='bg-black flex  items-center  w-full h-full overflow-hidden ' >
         <div 
-        className='form  relative  h-full flex justify-center items-center w-1/2 '>
-            
+        className='form  relative  h-full flex justify-center items-center w-1/2 '>            
             <form onSubmit={(e)=>{
                 console.log("gaya bhai....1")
                 e.preventDefault;
@@ -140,7 +139,7 @@ const Admin = ({className=""}) => {
                 <input type="text" placeholder='Discription of ANIME' id='Desc'  className='p-2 bg-white rounded outline-none focus:ring-2 ring-sky-400'/>
                </div>
                 <div className='Name flex space-y-1 flex-col p-2 w-full text-xl font-semibold'>
-                 <label  >Discription of ANIME</label>
+                 <label  >Quote of The ANIME</label>
                 <input type="text" placeholder='Quote of ANIME' id='Quote'  className='p-2 bg-white rounded outline-none focus:ring-2 ring-sky-400'/>
                </div>
                <div className='w-full bg-sky-500 flex justify-center rounded-xl py-3 hover:scale-95 '>

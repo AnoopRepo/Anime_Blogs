@@ -5,15 +5,19 @@ import axios from "axios";
 
 const Project = ({ className = "" }) => {
   const [animeD, setAnimeD] = useState([]);
-    useEffect(async()=>{
-      try {
+    useEffect(()=>{
+      const fetchdata=async function(){
+        try {
         const res=await axios.get('http://localhost:8080/Admin');
-        let data=[...animeD];
-        data.push(res.data);
-        setAnimeD(data);
+        let data1=[...animeD];
+        setAnimeD(...data1,res.data);
+        console.log(animeD);
       } catch (error) {
-        
+       console.log(error);
+       alert(error,"hello"); 
       }
+      }
+      fetchdata();
     },[])
   const containerRef = useRef(null);
   const frameRef = useRef({
@@ -103,28 +107,34 @@ const Project = ({ className = "" }) => {
   return (
     <section
       ref={containerRef}
-      className={`relative w-full h-full flex justify-around items-center rounded-2xl shadow-2xl transform-gpu ${className}`}
+      className={`relative overflow-hidden w-full h-full flex justify-around items-center  shadow-2xl transform-gpu ${className}`}
       style={{ perspective: "1200px" }}
     >
-      {/* Foreground Image */}
-          {
-            animeD.map((val,ind)=>{
-               <div className="w-1/2 text-wrap">
-               <h1 className='text-white'>
-                  <p className="text-3xl">{val.name}</p>
-               </h1>
-               <p className="text-white ">
-              <p> {val.date}</p>
-               <p>Seasons:{val.num}</p>
-               <p>Description </p>
-              <p className="flex text-wrap"> {val.description}</p>
-                 <p className="font-bold">— Goku (Super Saiyan on Namek)</p>
-               Quote: {val.quote}</p>
-               
-             </div>
-            })
-          }
-               <div className='p-10 flex justify-center top-0 relative items-center'>
+
+         <div className="w-1/2 flex  flex-col justify-center items-center">
+           {
+            animeD.map((val, ind) => {
+             return (
+               <div key={ind} className="w-1/2 ">
+                 <h1 className="text-white">
+                   <div className="text-3xl">{val.name}</div>
+                 </h1>
+
+                 <div className="text-white">
+                   <div>{new Date(val.date).toLocaleDateString()}</div>
+                   <div>Seasons: {val.num}</div>
+                   <div>Description:</div>
+                   <div className="flex text-wrap">{val.description}</div>
+
+                   <div className="font-bold">Goku Bhai </div>
+                   <div>Quote: {val.quote}</div>
+                 </div>
+               </div>
+             );
+           })
+         }
+         </div>
+               <div className='w-1/2 p-10 flex justify-center top-0 relative items-center'>
                  <img
                data-layer="fg"
                src={fg}

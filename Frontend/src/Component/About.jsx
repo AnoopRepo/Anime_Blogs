@@ -91,7 +91,7 @@ const About = ({ className = "" }) => {
     return (
       <section
         ref={containerRef}
-        className={`relative w-full h-full flex   justify-around items-center rounded-2xl shadow-2xl transform-gpu ${className}`}
+        className={`relative w-full h-full flex  justify-around items-center rounded-2xl shadow-2xl transform-gpu ${className}`}
         style={{ perspective: "1200px" }}
       >
         {/* Foreground Image */}

@@ -34,6 +34,7 @@ const Navbar = () => {
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/project">Project</Link>
+        <input type="text" placeholder='Search here .....' className='bg-white py-1 px-3 outline-none focus:ring-2 focus:ring-emerald-500'/>
         </div>
         <div className='sm:hidden font-bold text-2xl '>
             <i className="ri-menu-3-line"></i>
