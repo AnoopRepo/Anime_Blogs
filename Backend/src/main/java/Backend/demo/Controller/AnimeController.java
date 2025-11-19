@@ -35,14 +35,14 @@ public class AnimeController {
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
-    @GetMapping("/{name}")
-    public ResponseEntity<?> getByInput(@PathVariable String input){
-        List<AnimeDis> anime=services.searchByTypeOrName(input);
-        if(anime!=null){
-            return new ResponseEntity<>(anime,HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-    }
+//    @GetMapping("/{name}")
+//    public ResponseEntity<?> getByInput(@PathVariable String input){
+//        List<AnimeDis> anime=services.searchByTypeOrName(input);
+//        if(anime!=null){
+//            return new ResponseEntity<>(anime,HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//    }
 
     @PostMapping()
     public ResponseEntity<?> saveDes(@RequestBody AnimeDis anime){

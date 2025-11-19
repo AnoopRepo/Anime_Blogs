@@ -28,17 +28,16 @@ public class AnimeServices {
     public AnimeDis findByName(String name) {
         return repo.findByName(name);
     }
-    @Autowired
-    private MongoTemplate mongoTemplate;
 
-    public List<AnimeDis> searchByTypeOrName(String input) {
-        Query query = new Query();
-        query.addCriteria(
-                new Criteria().orOperator(
-                        Criteria.where("type").is(input),
-                        Criteria.where("name").regex(input, "i")  // case-insensitive partial match for names
-                )
-        );
-        return mongoTemplate.find(query, AnimeDis.class);
-    }
+
+//    public List<AnimeDis> searchByTypeOrName(String input) {
+//        Query query = new Query();
+//        query.addCriteria(
+//                new Criteria().orOperator(
+//                        Criteria.where("type").is(input),
+//                        Criteria.where("name").regex(input, "i")  // case-insensitive partial match for names
+//                )
+//        );
+//        return mongoTemplate.find(query, AnimeDis.class);
+//    }
 }
