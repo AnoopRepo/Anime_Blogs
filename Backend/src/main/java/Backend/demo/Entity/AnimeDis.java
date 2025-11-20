@@ -16,6 +16,8 @@ public class AnimeDis {
     private Date date;
     private String num;
     private String description;
+    private String genreType;
     private String quote;
+    private String imageUrl;
 
 }

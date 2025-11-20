@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import ds from '../assets/ds.jpg'
+
 import axios from 'axios'
 
 const Admin = ({className=""}) => {
@@ -103,11 +103,13 @@ const Admin = ({className=""}) => {
         const Description=document.querySelector("#Desc");
         const Num=document.querySelector("#Num");
         const Quote=document.querySelector("#Quote");
+        const Genre=document.querySelector("#Genre");
       const detail={
         name:Name.value,
         date:date.value,
         num : Num.value,
         description : Description.value,
+        genreType: Genre.value, 
         quote:Quote.value
       }
       try {
@@ -141,6 +143,10 @@ const Admin = ({className=""}) => {
                 <div className='Name flex space-y-1 flex-col p-2 w-full text-xl font-semibold'>
                  <label  >Quote of The ANIME</label>
                 <input type="text" placeholder='Quote of ANIME' id='Quote'  className='p-2 bg-white rounded outline-none focus:ring-2 ring-sky-400'/>
+               </div>
+               <div className='Name flex space-y-1 flex-col p-2 w-full text-xl font-semibold'>
+                 <label  >GenreType of The ANIME</label>
+                <input type="text" placeholder='GenreType of ANIME' id='Genre'  className='p-2 bg-white rounded outline-none focus:ring-2 ring-sky-400'/>
                </div>
                <div className='w-full bg-sky-500 flex justify-center rounded-xl py-3 hover:scale-95 '>
                 <button type='submit' >Submit</button>

@@ -30,14 +30,7 @@ public class AnimeServices {
     }
 
 
-//    public List<AnimeDis> searchByTypeOrName(String input) {
-//        Query query = new Query();
-//        query.addCriteria(
-//                new Criteria().orOperator(
-//                        Criteria.where("type").is(input),
-//                        Criteria.where("name").regex(input, "i")  // case-insensitive partial match for names
-//                )
-//        );
-//        return mongoTemplate.find(query, AnimeDis.class);
-//    }
+    public List<AnimeDis> searchByTypeOrName(String query) {
+        return repo.searchByNameOrGenre(query);
+    }
 }
